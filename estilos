@@ -1,0 +1,54 @@
+// ESTILOS
+
+// -----  SEARCH component -----
+
+// const styles = StyleSheet.create({
+// container: {
+//   justifyContent: "center",
+//   flexDirection: "row",
+//   alignItems: "center",
+//   marginVertical: 15,
+// },
+// input: {
+//   width: "78%",
+//   borderWidth: 1,
+//   borderRadius: 8,
+//   padding: 10,
+//   fontSize: 20,
+//   marginRight: 15,
+// },
+// error: {
+//   marginLeft: 18,
+//   color: "#EE4B2B",
+// },
+// });
+
+// -----  PRODUCT ITEM component -----
+
+// const styles = StyleSheet.create({
+//     container: {
+//       marginHorizontal: 20,
+//       marginVertical: 10,
+//       borderColor: colors.heavyBlue,
+//       borderRadius: 10,
+//       borderWidth: 1,
+//       height: 100,
+//       justifyContent: "center",
+//     },
+//     title: {
+//       fontSize: 18,
+//       padding: 10,
+//       width: "50%",
+//       fontWeight: "bold",
+//     },
+//     image: {
+//       height: 80,
+//       width: 100,
+//     },
+//     button: {
+//       flexDirection: "row",
+//       justifyContent: "space-between",
+//       paddingHorizontal: 15,
+//       alignItems: "center",
+//     },
+// });

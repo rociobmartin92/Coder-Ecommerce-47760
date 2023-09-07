@@ -19,6 +19,7 @@ const Categories = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.heavyBlue,
+    paddingTop: 20,
   },
 });
 

@@ -13,16 +13,16 @@ const CategoryItem = ({ item }) => {
 const styles = StyleSheet.create({
   categoryText: {
     fontSize: 22,
-    margin: 5,
+    marginHorizontal: 20,
+    marginVertical: 8,
     color: colors.white,
     alignItems: "center",
     justifyContent: "center",
-    width: "100%",
 
     // BORDER STYLES
     borderColor: colors.white,
     borderWidth: 2,
-    borderRadius: 18,
+    borderRadius: 20,
 
     // Text styles
     textAlign: "center",
