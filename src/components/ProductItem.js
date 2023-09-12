@@ -1,11 +1,19 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
 import { colors } from "../theme/colors";
+import { useWindowDimensions } from "react-native";
+import { Dimensions } from "react-native";
 
 const ProductItem = ({ item }) => {
+  // const { height, width } = useWindowDimensions();
+
+  // console.log("height:", height, "width: ", width);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.text}> {item.title} </Text>
+      <Text style={width < 300 ? styles.textMin : styles.text}>
+        {item.title}
+      </Text>
 
       <Image
         style={styles.image}
@@ -32,6 +40,11 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
+    fontWeight: "900",
+    marginLeft: 20,
+  },
+  textMin: {
+    fontSize: 10,
     fontWeight: "900",
     marginLeft: 20,
   },

@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "600",
     color: colors.heavyBlue,
+    fontFamily: "Dancing",
   },
 });
 

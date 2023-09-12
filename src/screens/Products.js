@@ -9,9 +9,6 @@ const Products = ({ category }) => {
   const [categoryProd, setCategoryProd] = useState([]);
   const [text, setText] = useState(null);
 
-  console.log("TEXTO", text);
-  console.log("Category Prod", categoryProd);
-
   useEffect(() => {
     const categoryProducts = products.filter((el) => el.category === category);
     setCategoryProd(categoryProducts);

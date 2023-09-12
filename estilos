@@ -52,3 +52,57 @@
 //       alignItems: "center",
 //     },
 // });
+
+// -----   ITEM DETAIL component -----
+
+// const styles = StyleSheet.create({
+//     image: {
+//       height: 315,
+//       width: 360,
+//     },
+//     imageContainer: {
+//       alignItems: "center",
+//       marginTop: 50,
+//     },
+//     descriptionContainer: {
+//       marginVertical: 10,
+//       marginTop: 8,
+//       marginHorizontal: 10,
+//     },
+//     title: {
+//       fontSize: 29,
+//       fontWeight: "700",
+//     },
+//     description: {
+//       fontSize: 21,
+//       fontWeight: "500",
+//       marginTop: 6,
+//     },
+//     price: {
+//       marginTop: 10,
+//       fontSize: 31,
+//     },
+//     rating: { fontSize: 20, marginLeft: 5 },
+//     ratingContainer: {
+//       marginVertical: 10,
+//       flexDirection: "row",
+//       alignItems: "center",
+//     },
+//     button: {
+//       marginVertical: 20,
+//       alignItems: "center",
+//       justifyContent: "center",
+//       paddingVertical: 12,
+//       paddingHorizontal: 32,
+//       borderRadius: 4,
+//       elevation: 3,
+//       backgroundColor: "black",
+//     },
+//     text: {
+//       fontSize: 16,
+//       lineHeight: 21,
+//       fontWeight: "bold",
+//       letterSpacing: 0.25,
+//       color: "white",
+//     },
+//   });
