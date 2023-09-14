@@ -32,10 +32,8 @@ const Products = ({ route, navigation }) => {
 
   return (
     <SafeAreaView>
-      <Header title={item} />
-      <Pressable onPress={() => navigation.goBack()}>
-        <Text> Ir Atrás </Text>
-      </Pressable>
+      <Header title={item} navigation={navigation} />
+
       <Search text={text} setText={setText} />
 
       <FlatList

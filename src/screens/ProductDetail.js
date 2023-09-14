@@ -16,7 +16,7 @@ const ProductDetail = ({ navigation }) => {
 
   return (
     <SafeAreaView>
-      <Header title="Detalle" />
+      <Header title="Detalle" navigation={navigation} />
       <Pressable onPress={() => navigation.goBack()}>
         <Text> Ir Atrás </Text>
       </Pressable>

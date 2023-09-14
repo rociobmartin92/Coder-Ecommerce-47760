@@ -5,8 +5,8 @@ import { colors } from "../theme/colors";
 const Header = ({ title, navigation }) => {
   return (
     <View style={styles.container}>
-      <Pressable>
-        <Text>Ir atrás</Text>
+      <Pressable onPress={() => navigation.goBack()}>
+        <Text> Ir Atrás </Text>
       </Pressable>
       <Text style={styles.headerText}> {title} </Text>
     </View>
