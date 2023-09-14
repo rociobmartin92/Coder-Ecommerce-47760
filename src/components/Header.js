@@ -1,10 +1,13 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Pressable } from "react-native";
 import React from "react";
 import { colors } from "../theme/colors";
 
-const Header = ({ title }) => {
+const Header = ({ title, navigation }) => {
   return (
     <View style={styles.container}>
+      <Pressable>
+        <Text>Ir atrás</Text>
+      </Pressable>
       <Text style={styles.headerText}> {title} </Text>
     </View>
   );
@@ -20,8 +23,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   headerText: {
-    fontSize: 25,
-    fontWeight: "600",
+    fontSize: 35,
+
     color: colors.heavyBlue,
     fontFamily: "Dancing",
   },
