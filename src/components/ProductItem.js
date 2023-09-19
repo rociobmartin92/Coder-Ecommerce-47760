@@ -42,11 +42,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "900",
     marginLeft: 20,
+    width: "70%",
   },
   textMin: {
     fontSize: 10,
     fontWeight: "900",
     marginLeft: 20,
+    width: "70%",
   },
   image: {
     marginRight: 10,

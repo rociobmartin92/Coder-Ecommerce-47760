@@ -1,7 +1,7 @@
 import { View, Text, SafeAreaView, FlatList, StyleSheet } from "react-native";
 import React from "react";
 import Header from "../components/Header";
-import Categories from "../components/Categories";
+
 import { useWindowDimensions } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { categories } from "../data/categories";
@@ -10,7 +10,7 @@ import { colors } from "../theme/colors";
 
 const Home = ({ navigation }) => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ marginBottom: 40 }}>
       <Header title="Categorías" navigation={navigation} />
       <View style={styles.container}>
         <FlatList

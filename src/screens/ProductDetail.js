@@ -10,6 +10,8 @@ import {
 import React from "react";
 import { products } from "../data/products";
 import Header from "../components/Header";
+import { AntDesign } from "@expo/vector-icons";
+import { colors } from "../theme/colors";
 
 const ProductDetail = ({ navigation }) => {
   const initialProd = products[1];
@@ -17,8 +19,11 @@ const ProductDetail = ({ navigation }) => {
   return (
     <SafeAreaView>
       <Header title="Detalle" navigation={navigation} />
-      <Pressable onPress={() => navigation.goBack()}>
-        <Text> Ir Atrás </Text>
+      <Pressable
+        style={{ marginLeft: 15, marginBottom: 10 }}
+        onPress={() => navigation.goBack()}
+      >
+        <AntDesign name="caretleft" size={24} color={colors.mediumBlue} />
       </Pressable>
       <View style={styles.containerImage}>
         <Image

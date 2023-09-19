@@ -2,12 +2,10 @@ import { View, Text, StyleSheet, Pressable } from "react-native";
 import React from "react";
 import { colors } from "../theme/colors";
 
-const Header = ({ title, navigation }) => {
+const Header = ({ title }) => {
   return (
     <View style={styles.container}>
-      <Pressable onPress={() => navigation.goBack()}>
-        <Text> Ir Atrás </Text>
-      </Pressable>
+      <Pressable onPress={() => navigation.goBack()}></Pressable>
       <Text style={styles.headerText}> {title} </Text>
     </View>
   );

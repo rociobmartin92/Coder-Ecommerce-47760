@@ -7,6 +7,7 @@ import Products from "./src/screens/Products";
 import { useFonts } from "expo-font";
 import ProductDetail from "./src/screens/ProductDetail";
 import RootNavigation from "./src/navigation/RootNavigation";
+import TabNav from "./src/navigation/TabNav";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -20,7 +21,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <RootNavigation />
+      <TabNav />
     </NavigationContainer>
   );
 }
