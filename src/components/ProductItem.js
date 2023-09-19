@@ -9,7 +9,7 @@ const ProductItem = ({ item, navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Pressable onPress={() => navigation.navigate("productDetail")}>
+      <Pressable onPress={() => navigation.navigate("productDetail", { item })}>
         <Text style={width < 300 ? styles.textMin : styles.text}>
           {item.title}
         </Text>

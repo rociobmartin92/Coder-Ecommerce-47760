@@ -13,8 +13,12 @@ import Header from "../components/Header";
 import { AntDesign } from "@expo/vector-icons";
 import { colors } from "../theme/colors";
 
-const ProductDetail = ({ navigation }) => {
+const ProductDetail = ({ navigation, route }) => {
   const initialProd = products[1];
+
+  const { item } = route.params;
+
+  console.log(item);
 
   return (
     <SafeAreaView>
@@ -29,7 +33,7 @@ const ProductDetail = ({ navigation }) => {
         <Image
           style={styles.image}
           source={{
-            uri: initialProd.images[2],
+            uri: item.images[0],
           }}
         />
         <View
@@ -38,16 +42,16 @@ const ProductDetail = ({ navigation }) => {
             alignItems: "center",
           }}
         >
-          <Text style={styles.title}> {initialProd.title} </Text>
-          <Text style={styles.price}> ${initialProd.price} </Text>
+          <Text style={styles.title}> {item.title} </Text>
+          <Text style={styles.price}> ${item.price} </Text>
         </View>
-        <Text style={styles.description}> {initialProd.description} </Text>
+        <Text style={styles.description}> {item.description} </Text>
         <Button
           color="red"
           title="Agregar al carrito"
           onPress={() => console.log("Hola funciona")}
         />
-        <Text style={styles.description}> Rating: {initialProd.rating} </Text>
+        <Text style={styles.description}> Rating: {item.rating} </Text>
       </View>
     </SafeAreaView>
   );
