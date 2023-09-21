@@ -16,8 +16,7 @@ const homeSlice = createSlice({
       state.categorySelected = action.payload;
 
       state.productsFilterByCategory = state.allProducts.filter(
-        (el) =>
-          el.category.toLowerCase() === state.categorySelected.toLowerCase()
+        (el) => el.category === state.categorySelected
       );
     },
   },

@@ -18,13 +18,18 @@ const Products = ({ route, navigation }) => {
     (state) => state.homeSlice.productsFilterByCategory
   );
 
-  console.log(productsFilterByCategory);
+  // console.log(productsFilterByCategory);
 
   useEffect(() => {
-    setCategoryProd(productsFilterByCategory);
+    const categoryProducts = products.filter((el) => el.category === item);
+
+    console.log(categoryProducts);
+    setCategoryProd(categoryProducts);
 
     if (text) {
-      const titleProduct = products.filter((el) => el.title === text);
+      const titleProduct = products.filter(
+        (el) => el.title.toLowerCase() === text.toLowerCase()
+      );
       setCategoryProd(titleProduct);
     }
   }, [text, item]);
