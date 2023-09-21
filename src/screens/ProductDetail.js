@@ -8,17 +8,12 @@ import {
   Pressable,
 } from "react-native";
 import React from "react";
-import { products } from "../data/products";
 import Header from "../components/Header";
 import { AntDesign } from "@expo/vector-icons";
 import { colors } from "../theme/colors";
 
 const ProductDetail = ({ navigation, route }) => {
-  const initialProd = products[1];
-
   const { item } = route.params;
-
-  console.log(item);
 
   return (
     <SafeAreaView>
@@ -47,7 +42,7 @@ const ProductDetail = ({ navigation, route }) => {
         </View>
         <Text style={styles.description}> {item.description} </Text>
         <Button
-          color="red"
+          color="black"
           title="Agregar al carrito"
           onPress={() => console.log("Hola funciona")}
         />

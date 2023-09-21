@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, Pressable } from "react-native";
 import React from "react";
 import { colors } from "../theme/colors";
 
-const Header = ({ title }) => {
+const Header = ({ title, navigation }) => {
   return (
     <View style={styles.container}>
       <Pressable onPress={() => navigation.goBack()}></Pressable>

@@ -1,30 +1,27 @@
-import {
-  View,
-  Text,
-  FlatList,
-  Image,
-  SafeAreaView,
-  Pressable,
-} from "react-native";
+import { FlatList, SafeAreaView, Pressable } from "react-native";
 import React, { useEffect, useState } from "react";
 import Search from "../components/Search";
 import Header from "../components/Header";
-import { products } from "../data/products";
 import ProductItem from "../components/ProductItem";
 import { AntDesign } from "@expo/vector-icons";
 import { colors } from "../theme/colors";
+import { useSelector } from "react-redux";
 
 const Products = ({ route, navigation }) => {
   const [categoryProd, setCategoryProd] = useState([]);
   const [text, setText] = useState(null);
-
   const { item } = route.params;
 
-  // console.log(item);
+  const products = useSelector((state) => state.homeSlice.allProducts);
+
+  const productsFilterByCategory = useSelector(
+    (state) => state.homeSlice.productsFilterByCategory
+  );
+
+  console.log(productsFilterByCategory);
 
   useEffect(() => {
-    const categoryProducts = products.filter((el) => el.category === item);
-    setCategoryProd(categoryProducts);
+    setCategoryProd(productsFilterByCategory);
 
     if (text) {
       const titleProduct = products.filter((el) => el.title === text);
