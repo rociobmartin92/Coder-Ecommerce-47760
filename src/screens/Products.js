@@ -21,10 +21,7 @@ const Products = ({ route, navigation }) => {
   // console.log(productsFilterByCategory);
 
   useEffect(() => {
-    const categoryProducts = products.filter((el) => el.category === item);
-
-    console.log(categoryProducts);
-    setCategoryProd(categoryProducts);
+    setCategoryProd(productsFilterByCategory);
 
     if (text) {
       const titleProduct = products.filter(

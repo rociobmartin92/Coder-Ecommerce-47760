@@ -3,7 +3,6 @@ import {
   Text,
   Image,
   StyleSheet,
-  Button,
   SafeAreaView,
   Pressable,
 } from "react-native";
@@ -11,9 +10,18 @@ import React from "react";
 import Header from "../components/Header";
 import { AntDesign } from "@expo/vector-icons";
 import { colors } from "../theme/colors";
+import { useSelector } from "react-redux";
 
 const ProductDetail = ({ navigation, route }) => {
-  const { item } = route.params;
+  // const { item } = route.params;
+
+  const productSelected = useSelector(
+    (state) => state.homeSlice.productSelected
+  );
+
+  const item = productSelected;
+
+  console.log("ProductSelected", productSelected);
 
   return (
     <SafeAreaView>
@@ -41,11 +49,9 @@ const ProductDetail = ({ navigation, route }) => {
           <Text style={styles.price}> ${item.price} </Text>
         </View>
         <Text style={styles.description}> {item.description} </Text>
-        <Button
-          color="black"
-          title="Agregar al carrito"
-          onPress={() => console.log("Hola funciona")}
-        />
+        <Pressable>
+          <Text>Button</Text>
+        </Pressable>
         <Text style={styles.description}> Rating: {item.rating} </Text>
       </View>
     </SafeAreaView>

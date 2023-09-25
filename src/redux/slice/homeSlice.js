@@ -19,9 +19,13 @@ const homeSlice = createSlice({
         (el) => el.category === state.categorySelected
       );
     },
+
+    setProductSelected: (state, action) => {
+      state.productSelected = action.payload;
+    },
   },
 });
 
-export const { setCategory } = homeSlice.actions;
+export const { setCategory, setProductSelected } = homeSlice.actions;
 
 export default homeSlice.reducer;
