@@ -7,6 +7,8 @@ import { AntDesign } from "@expo/vector-icons";
 import { colors } from "../theme/colors";
 import { useSelector } from "react-redux";
 
+import { useGetProductsQuery } from "../services/ecApi";
+
 const Products = ({ route, navigation }) => {
   const [categoryProd, setCategoryProd] = useState([]);
   const [text, setText] = useState(null);
@@ -14,11 +16,15 @@ const Products = ({ route, navigation }) => {
 
   const products = useSelector((state) => state.homeSlice.allProducts);
 
+  const { data, isLoading, isError } = useGetProductsQuery();
+
+  console.log(data);
+
   const productsFilterByCategory = useSelector(
     (state) => state.homeSlice.productsFilterByCategory
   );
 
-  // console.log(productsFilterByCategory);
+  console.log("ITEM is category selected:", item);
 
   useEffect(() => {
     setCategoryProd(productsFilterByCategory);

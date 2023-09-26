@@ -19,10 +19,6 @@ const ProductDetail = ({ navigation, route }) => {
     (state) => state.homeSlice.productSelected
   );
 
-  const item = productSelected;
-
-  console.log("ProductSelected", productSelected);
-
   return (
     <SafeAreaView>
       <Header title="Detalle" navigation={navigation} />
@@ -36,7 +32,7 @@ const ProductDetail = ({ navigation, route }) => {
         <Image
           style={styles.image}
           source={{
-            uri: item.images[0],
+            uri: productSelected.images[0],
           }}
         />
         <View
@@ -45,14 +41,14 @@ const ProductDetail = ({ navigation, route }) => {
             alignItems: "center",
           }}
         >
-          <Text style={styles.title}> {item.title} </Text>
-          <Text style={styles.price}> ${item.price} </Text>
+          <Text style={styles.title}> {productSelected.title} </Text>
+          <Text style={styles.price}> ${productSelected.price} </Text>
         </View>
-        <Text style={styles.description}> {item.description} </Text>
-        <Pressable>
-          <Text>Button</Text>
-        </Pressable>
-        <Text style={styles.description}> Rating: {item.rating} </Text>
+        <Text style={styles.description}> {productSelected.description} </Text>
+        {/* <Pressable>
+          <Text style={styles.button}> Comprar</Text>
+        </Pressable> */}
+        <Text style={styles.description}>Rating: {productSelected.rating}</Text>
       </View>
     </SafeAreaView>
   );
