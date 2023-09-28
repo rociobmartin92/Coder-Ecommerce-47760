@@ -16,16 +16,12 @@ import { useGetCategoriesQuery } from "../services/ecApi";
 const Home = ({ navigation }) => {
   // const categories = useSelector((state) => state.homeSlice.allCategories);
 
-  // console.log("CATEGORIES FROM STORE", categories);
-
   const {
     data: categories,
     isLoading,
     isError,
     error,
   } = useGetCategoriesQuery();
-
-  console.log(categories);
 
   // console.log(JSON.stringify(datos, null, " "));
 
@@ -35,14 +31,14 @@ const Home = ({ navigation }) => {
         <View
           style={{ flex: 1, justifyContent: "center", alignContent: "center" }}
         >
-          {/* <ActivityIndicator style={{}} size="small" color="#0000ff" /> */}
-          <Text> Cargando datos...</Text>
+          <ActivityIndicator style={{}} size="small" color="#0000ff" />
         </View>
       ) : (
         <>
           <Header title="Categorías" navigation={navigation} />
           <View style={styles.container}>
             <FlatList
+              style={{ marginBottom: 50 }}
               data={categories}
               keyExtractor={(key) => key}
               renderItem={({ item }) => (

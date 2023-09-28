@@ -18,13 +18,11 @@ const Products = ({ route, navigation }) => {
 
   const { data, isLoading, isError } = useGetProductsQuery();
 
-  console.log(data);
+  // console.log(data);
 
   const productsFilterByCategory = useSelector(
     (state) => state.homeSlice.productsFilterByCategory
   );
-
-  console.log("ITEM is category selected:", item);
 
   useEffect(() => {
     setCategoryProd(productsFilterByCategory);
