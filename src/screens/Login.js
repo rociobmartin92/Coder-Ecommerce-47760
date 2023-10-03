@@ -28,7 +28,7 @@ const Login = ({ navigation }) => {
 
       dispatch(setUser(response.user.email));
       dispatch(setIdToken(response._tokenResponse.idToken));
-      console.log(response);
+      // console.log(response);
     } catch (e) {
       console.log("Error en Login", e);
     }

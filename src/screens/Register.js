@@ -23,7 +23,7 @@ const Register = ({ navigation }) => {
         password
       );
 
-      console.log(response);
+      // console.log(response);
 
       navigation.navigate("login");
     } catch (e) {
