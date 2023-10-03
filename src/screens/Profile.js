@@ -77,7 +77,7 @@ const Profile = () => {
       console.log(result);
 
       if (!result.canceled) {
-        await putImageProfile({
+        await putImage({
           image: `data:image/jpeg;base64,${result.assets[0].base64}`,
         });
         refetch();
