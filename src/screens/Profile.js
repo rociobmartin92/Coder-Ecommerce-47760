@@ -23,8 +23,6 @@ const Profile = () => {
 
   const { data, isLoading, error, isError, refetch } = useGetImageQuery();
 
-  // console.log("DATA", data);
-
   const defaultImage =
     "https://img.freepik.com/premium-vector/woman-avatar-profile-round-icon_24640-14047.jpg?w=2000";
 
@@ -67,7 +65,25 @@ const Profile = () => {
     }
   };
 
-  // console.log("IMAGEN GUARDADA EN BASE64", image);
+  const openCamera = async () => {
+    const permissionResult = await ImagePicker.requestCameraPermissionsAsync();
+
+    if (permissionResult.granted === false) {
+      alert("No le has dado acceso a la Aplicación para acceder a tu cámara!");
+      return;
+    } else {
+      const result = await ImagePicker.launchCameraAsync();
+
+      console.log(result);
+
+      if (!result.canceled) {
+        await putImageProfile({
+          image: `data:image/jpeg;base64,${result.assets[0].base64}`,
+        });
+        refetch();
+      }
+    }
+  };
 
   return (
     <View>
@@ -99,16 +115,16 @@ const Profile = () => {
 
         <View style={styles.buttonContainer}>
           <View style={styles.containerButton}>
-            <Pressable style={styles.containerIcon} onPress={() => pickImage()}>
+            <Pressable
+              style={styles.containerIcon}
+              onPress={() => openCamera()}
+            >
               <Entypo name="camera" size={24} color="black" />
             </Pressable>
             <Text style={styles.textButton}>Abrir Cámara</Text>
           </View>
           <View style={styles.containerButton}>
-            <Pressable
-              style={styles.containerIcon}
-              onPress={() => console.log("abrir galería de fotos..")}
-            >
+            <Pressable style={styles.containerIcon} onPress={() => pickImage()}>
               <FontAwesome name="photo" size={24} color="black" />
             </Pressable>
             <Text style={styles.textButton}>Abrir Galería de fotos</Text>
@@ -154,48 +170,3 @@ const styles = StyleSheet.create({
 });
 
 export default Profile;
-
-// const [image, setImage] = useState(null);
-
-// const [putImageMutation, result] = usePutImageMutation();
-// const { data, isLoading, error, refetch } = useGetImageQuery();
-
-// const pickImage = async () => {
-//   // No permissions request is necessary for launching the image library
-//   let result = await ImagePicker.launchImageLibraryAsync({
-//     mediaTypes: ImagePicker.MediaTypeOptions.Images,
-//     allowsEditing: true,
-//     aspect: [4, 4],
-//     quality: 1,
-//     base64: true,
-//   });
-
-//   console.log(result);
-
-//   if (!result.canceled) {
-//     await putImageMutation({
-//       image: `data:image/jpeg;base64,${result.assets[0].base64}`,
-//     });
-//     refetch();
-//   }
-// };
-
-// const openCamera = async () => {
-//   const permissionResult = await ImagePicker.requestCameraPermissionsAsync();
-
-//   if (permissionResult.granted === false) {
-//     alert("No le has dado acceso a la Aplicación para acceder a tu cámara!");
-//     return;
-//   } else {
-//     const result = await ImagePicker.launchCameraAsync();
-
-//     console.log(result);
-
-//     if (!result.canceled) {
-//       await putImageProfile({
-//         image: `data:image/jpeg;base64,${result.assets[0].base64}`,
-//       });
-//       refetch();
-//     }
-//   }
-// };
