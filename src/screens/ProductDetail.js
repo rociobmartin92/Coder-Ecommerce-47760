@@ -22,12 +22,7 @@ const ProductDetail = ({ navigation, route }) => {
   return (
     <SafeAreaView>
       <Header title="Detalle" navigation={navigation} />
-      <Pressable
-        style={{ marginLeft: 15, marginBottom: 10 }}
-        onPress={() => navigation.goBack()}
-      >
-        <AntDesign name="caretleft" size={24} color={colors.mediumBlue} />
-      </Pressable>
+
       <View style={styles.containerImage}>
         <Image
           style={styles.image}

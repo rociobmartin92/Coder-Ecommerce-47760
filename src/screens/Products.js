@@ -38,12 +38,7 @@ const Products = ({ route, navigation }) => {
   return (
     <SafeAreaView>
       <Header title={item} navigation={navigation} />
-      <Pressable
-        style={{ marginLeft: 15, marginBottom: 10 }}
-        onPress={() => navigation.goBack()}
-      >
-        <AntDesign name="caretleft" size={24} color={colors.mediumBlue} />
-      </Pressable>
+
       <Search text={text} setText={setText} />
 
       <FlatList

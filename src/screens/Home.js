@@ -35,7 +35,7 @@ const Home = ({ navigation }) => {
         </View>
       ) : (
         <>
-          <Header title="Categorías" navigation={navigation} />
+          <Header title="Categorías" />
           <View style={styles.container}>
             <FlatList
               style={{ marginBottom: 50 }}

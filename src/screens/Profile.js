@@ -5,6 +5,7 @@ import {
   View,
   Pressable,
   ActivityIndicator,
+  ScrollView,
 } from "react-native";
 import React, { useState } from "react";
 import Header from "../components/Header";
@@ -15,9 +16,11 @@ import { colors } from "../theme/colors";
 import * as ImagePicker from "expo-image-picker";
 import { usePutImageMutation } from "../services/ecApi";
 import { useGetImageQuery } from "../services/ecApi";
+import * as Location from "expo-location";
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
   // const [image, setImage] = useState(null);
+  const [location, setLocation] = useState(null);
 
   const [putImage, result] = usePutImageMutation();
 
@@ -34,27 +37,6 @@ const Profile = () => {
       quality: 1,
       base64: true,
     });
-
-    // console.log("Result", result);
-    // LOG DEL RESULTADO QUE DEVUELVE:
-    // {
-    //   "assets": [
-    //     {
-    //       "assetId": "C166F9F5-B5FE-4501-9531",
-    //       "base64": null,
-    //       "duration": null,
-    //       "exif": null,
-    //       "fileName": "IMG.HEIC",
-    //       "fileSize": 6018901,
-    //       "height": 3025,
-    //       "type": "image",
-    //       "uri": ""
-    //       "width": 3024
-    //     }
-    //   ],
-    //   "canceled": false,
-    //   "cancelled": false
-    // }
 
     if (!result.canceled) {
       await putImage({
@@ -85,8 +67,20 @@ const Profile = () => {
     }
   };
 
+  const openLocation = async () => {
+    let { status } = await Location.requestForegroundPermissionsAsync();
+    if (status !== "granted") {
+      setErrorMsg("Permission to access location was denied");
+      return;
+    }
+
+    let location = await Location.getCurrentPositionAsync({});
+    setLocation(location);
+    navigation.navigate("map", { location });
+  };
+
   return (
-    <View>
+    <ScrollView>
       <Header title="Mi Perfil" />
 
       <View style={{ alignItems: "center", marginTop: 15 }}>
@@ -106,7 +100,7 @@ const Profile = () => {
           </View>
         ) : (
           <Image
-            style={styles.imagen}
+            style={styles.image}
             source={{
               uri: data ? data.image : defaultImage,
             }}
@@ -132,7 +126,7 @@ const Profile = () => {
           <View style={styles.containerButton}>
             <Pressable
               style={styles.containerIcon}
-              onPress={() => console.log("abrir mapa..")}
+              onPress={() => openLocation()}
             >
               <Feather name="map" size={24} color="black" />
             </Pressable>
@@ -140,12 +134,12 @@ const Profile = () => {
           </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  imagen: {
+  image: {
     width: 200,
     height: 200,
     borderRadius: 100,
@@ -170,3 +164,11 @@ const styles = StyleSheet.create({
 });
 
 export default Profile;
+
+// Buenos Aires Coordenadas
+// {
+//   latitude: -34.612172,
+//   longitude: -58.403896,
+//   latitudeDelta: 0.04,
+//   longitudeDelta: 0.09,
+// }

@@ -11,6 +11,7 @@ import RootNavigation from "./RootNavigation";
 import Profile from "../screens/Profile";
 
 import { colors } from "../theme/colors";
+import ProfileNav from "./ProfileNav";
 
 const Tab = createBottomTabNavigator();
 
@@ -40,8 +41,8 @@ const TabNav = () => {
             />
           ),
         }}
-        name="profile"
-        component={Profile}
+        name="profileNav"
+        component={ProfileNav}
       />
     </Tab.Navigator>
   );
