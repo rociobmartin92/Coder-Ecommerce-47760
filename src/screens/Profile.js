@@ -51,10 +51,12 @@ const Profile = ({ navigation }) => {
     const permissionResult = await ImagePicker.requestCameraPermissionsAsync();
 
     if (permissionResult.granted === false) {
-      alert("No le has dado acceso a la Aplicación para acceder a tu cámara!");
+      alert("No le has dado permiso a la Aplicación para acceder a tu cámara!");
       return;
     } else {
-      const result = await ImagePicker.launchCameraAsync();
+      const result = await ImagePicker.launchCameraAsync({
+        base64: true,
+      });
 
       console.log(result);
 
@@ -67,17 +69,38 @@ const Profile = ({ navigation }) => {
     }
   };
 
-  const openLocation = async () => {
+  const getCoords = async () => {
+    // Espera en este paso que nos de permiso
     let { status } = await Location.requestForegroundPermissionsAsync();
+
+    // console.log(status);
+
+    // Mensaje de permiso denegado
     if (status !== "granted") {
-      setErrorMsg("Permission to access location was denied");
+      console.log("Permiso fue denegado");
       return;
     }
 
+    // En este paso se obtiene la latitud y longitud como "location"
+    // Espera en este paso a obtener las coords
     let location = await Location.getCurrentPositionAsync({});
     setLocation(location);
-    navigation.navigate("map", { location });
+    navigation.navigate("mapaLoc", { location });
   };
+
+  console.log("COORDENADAS", location);
+
+  // const openLocation = async () => {
+  //   let { status } = await Location.requestForegroundPermissionsAsync();
+  //   if (status !== "granted") {
+  //     setErrorMsg("Permission to access location was denied");
+  //     return;
+  //   }
+
+  //   let location = await Location.getCurrentPositionAsync({});
+  //   setLocation(location);
+  //   navigation.navigate("map", { location });
+  // };
 
   return (
     <ScrollView>
@@ -126,7 +149,10 @@ const Profile = ({ navigation }) => {
           <View style={styles.containerButton}>
             <Pressable
               style={styles.containerIcon}
-              onPress={() => openLocation()}
+              onPress={() =>
+                // navigation.navigate("mapaLoc")
+                getCoords()
+              }
             >
               <Feather name="map" size={24} color="black" />
             </Pressable>

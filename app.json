@@ -36,7 +36,7 @@
       [
         "expo-location",
         {
-          "locationAlwaysAndWhenInUsePermission": "Allow Coder to use your location."
+          "locationAlwaysAndWhenInUsePermission": "Permitir a coder acceder a tu ubicación"
         }
       ]
     ]

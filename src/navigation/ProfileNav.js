@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Profile from "../screens/Profile";
 
 import Map from "../screens/Map";
+import MapaLoc from "../screens/MapaLoc";
 
 const Stack = createNativeStackNavigator();
 
@@ -15,7 +16,7 @@ const ProfileNav = () => {
       }}
     >
       <Stack.Screen component={Profile} name="profile" />
-      <Stack.Screen component={Map} name="map" />
+      <Stack.Screen component={MapaLoc} name="mapaLoc" />
     </Stack.Navigator>
   );
 };

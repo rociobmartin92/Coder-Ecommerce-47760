@@ -3,24 +3,21 @@ import React from "react";
 import MapView from "react-native-maps";
 import Header from "../components/Header";
 
-const Map = ({ route, navigation }) => {
+const MapaLoc = ({ route, navigation }) => {
   const { location } = route.params;
 
-  console.log("location coords", location.coords);
+  console.log(JSON.stringify(location, null, " "));
 
   return (
     <View style={styles.container}>
-      <Header navigation={navigation} title="Mapa" />
+      <Header title="Mi ubicación" navigation={navigation} />
       <MapView
-        pointerEvents={true}
         showsUserLocation={true}
-        style={styles.map}
         region={{
           latitude: location.coords.latitude,
           longitude: location.coords.longitude,
         }}
-
-        // showsPointsOfInterest={false}
+        style={styles.map}
       />
     </View>
   );
@@ -36,4 +33,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Map;
+export default MapaLoc;
