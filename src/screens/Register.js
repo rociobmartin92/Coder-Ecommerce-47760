@@ -47,7 +47,6 @@ const Register = ({ navigation }) => {
         value={password}
         onChangeText={(text) => setPassword(text)}
       />
-
       <TouchableOpacity style={styles.button} onPress={() => handleRegister()}>
         <Text style={styles.buttonText}>Registrarse</Text>
       </TouchableOpacity>

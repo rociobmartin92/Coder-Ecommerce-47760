@@ -41,6 +41,7 @@ const Home = ({ navigation }) => {
               style={{ marginBottom: 50 }}
               data={categories}
               keyExtractor={(key) => key}
+              onEndReached={() => console.log("Aquí")}
               renderItem={({ item }) => (
                 <CategoryItem navigation={navigation} item={item} />
               )}

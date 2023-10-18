@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import { Entypo } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { colors } from "../theme/colors";
 import * as ImagePicker from "expo-image-picker";
@@ -88,7 +89,7 @@ const Profile = ({ navigation }) => {
     navigation.navigate("mapaLoc", { location });
   };
 
-  console.log("COORDENADAS", location);
+  // console.log("COORDENADAS", location);
 
   // const openLocation = async () => {
   //   let { status } = await Location.requestForegroundPermissionsAsync();
@@ -157,6 +158,15 @@ const Profile = ({ navigation }) => {
               <Feather name="map" size={24} color="black" />
             </Pressable>
             <Text style={styles.textButton}>Abrir Mapa</Text>
+          </View>
+          <View style={styles.containerButton}>
+            <Pressable
+              style={styles.containerIcon}
+              onPress={() => navigation.navigate("sounds")}
+            >
+              <MaterialIcons name="audiotrack" size={24} color="black" />
+            </Pressable>
+            <Text style={styles.textButton}>Escuchar Audios</Text>
           </View>
         </View>
       </View>
