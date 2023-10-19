@@ -8,12 +8,15 @@
     "ios": "expo start --ios",
     "web": "expo start --web"
   },
+  "homepage": ".",
   "dependencies": {
     "@expo/webpack-config": "^19.0.0",
     "@react-navigation/bottom-tabs": "^6.5.8",
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",
     "@reduxjs/toolkit": "^1.9.5",
+    "@stripe/stripe-react-native": "0.28.0",
+    "eas-cli": "^5.4.0",
     "expo": "~49.0.8",
     "expo-av": "~13.4.1",
     "expo-font": "^11.4.0",

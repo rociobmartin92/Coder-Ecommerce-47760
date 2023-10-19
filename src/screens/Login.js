@@ -12,6 +12,7 @@ import { firebase_auth } from "../firebase/firebase_auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { setIdToken, setUser } from "../redux/slice/authSlice";
+import { AntDesign } from "@expo/vector-icons";
 
 const Login = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -37,6 +38,7 @@ const Login = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Inicio de Sesión</Text>
+      <AntDesign name="smile-circle" size={24} color="black" />
       <TextInput
         placeholder="Nombre de usuario"
         style={styles.input}

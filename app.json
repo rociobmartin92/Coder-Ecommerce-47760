@@ -21,10 +21,20 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.FOREGROUND_SERVICE"
+      ],
+      "package": "com.coderproyect47760"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "build": {
+        "output": "./web-build"
+      }
     },
     "plugins": [
       [
@@ -39,6 +49,11 @@
           "locationAlwaysAndWhenInUsePermission": "Permitir a coder acceder a tu ubicación"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "59009785-acd2-4353-b7fb-a726dcdc0142"
+      }
+    }
   }
 }
