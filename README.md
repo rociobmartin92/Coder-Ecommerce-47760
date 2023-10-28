@@ -1,8 +1,9 @@
 # Coder-Comision47760
 
 
-Aplicación realizada mientras enseñaba el curso "Desarrollo de Apliaciones"
-Temas aplicados:
+Aplicación realizada mientras enseñé el curso "Desarrollo de Apliaciones" en CoderHouse
+
+#Temas aplicados:
 
 - Expo
 - React Native
