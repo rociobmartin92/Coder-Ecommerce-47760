@@ -23,6 +23,7 @@
     "expo-image-picker": "~14.3.2",
     "expo-location": "~16.1.0",
     "expo-status-bar": "~1.6.0",
+    "expo-updates": "~0.18.16",
     "firebase": "^10.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",

@@ -2,7 +2,7 @@
   "expo": {
     "name": "myecommerce",
     "slug": "myecommerce",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -54,6 +54,12 @@
       "eas": {
         "projectId": "59009785-acd2-4353-b7fb-a726dcdc0142"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/59009785-acd2-4353-b7fb-a726dcdc0142"
     }
   }
 }
